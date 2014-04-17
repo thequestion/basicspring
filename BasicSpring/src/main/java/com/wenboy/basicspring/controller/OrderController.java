@@ -26,7 +26,8 @@ public class OrderController {
 	private static final Logger logger = LoggerFactory.getLogger(OrderController.class); 
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String showMessage(@RequestParam(value="name", required=false) String name){
+	public String showMessage(@RequestParam(value="name", required=false) String name, Model model){
+		model.addAttribute("name", name);
 		return "orders";
 	}
 	
